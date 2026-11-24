@@ -2,6 +2,12 @@
 
 *Deutsch: [README.de.md](README.de.md)*
 
+<!-- byline -->
+A plugin by **Akrota and Claude**.
+
+<!-- lang-note -->
+*Works in **English and German**: menus and texts follow KOReader's language. A German description is at the bottom of this page.*
+
 A KOReader plugin with your own tone curve for comics, like in an image editor. Black stays black, white stays white. In between you can move a midpoint and lighten or darken the shadows and the lights separately, for example for an S-curve with more contrast.
 
 - It is meant for colour and greyscale comic pages. Both colour pages (RGB) and greyscale pages are handled.
@@ -12,7 +18,11 @@ A KOReader plugin with your own tone curve for comics, like in an image editor. 
 
 ## Screenshots
 
-<img src="docs/screenshots/menu.png" width="320" alt="Levels menu"> 
+*The screenshots show the English interface; in a German KOReader the texts are German.*
+
+<table>
+<tr><td align="center" valign="top" width="33%"><img src="docs/screenshots/menu.png" width="260" alt="Levels menu: shadows, midpoint, lights, mid-tones"><br><sub>Levels menu: shadows, midpoint, lights, mid-tones</sub></td><td align="center" valign="top" width="33%"><img src="docs/screenshots/protect-shadows.png" width="260" alt="Protect shadows: off, light, strong"><br><sub>Protect shadows: off, light, strong</sub></td><td align="center" valign="top" width="33%"><img src="docs/screenshots/how-it-works.png" width="260" alt="Help text for midpoint, shadows, lights, mid-tones"><br><sub>Help text for midpoint, shadows, lights, mid-tones</sub></td></tr>
+</table>
 
 ## Features
 
@@ -70,6 +80,33 @@ The code was written entirely by **Claude**, an AI by Anthropic (in Claude Code)
 
 There is no warranty and no guaranteed support. Bug reports are welcome as [issues](../../issues). Please attach `crash.log` from the KOReader folder.
 
+## More plugins by Akrota and Claude
+
+- [Comic Display](https://github.com/Akrota/koreader-comic-display): Refresh against ghosting, dark borders and a clock for comics
+- [Comic Panel Zoom](https://github.com/Akrota/koreader-comic-panel-zoom): Panel-by-panel view (fork of JorgeTheFox's plugin)
+- [Comic Dual Page](https://github.com/Akrota/koreader-comic-dual-page): Double pages with detection (fork of KORComic)
+- [CBZ Converter](https://github.com/Akrota/koreader-cbz-converter): Convert comics, PDF and EPUB to CBZ on the device
+- [Folder to series](https://github.com/Akrota/koreader-folder-to-series): Comic folders to series with volume numbers
+- [Drive Library](https://github.com/Akrota/koreader-drive-library): Google Drive as a cloud library
+- [Story Recall](https://github.com/Akrota/koreader-story-recall): Spoiler-free AI recap for books
+- [Guitar Tab Reader](https://github.com/Akrota/koreader-guitar-tab-reader): Guitar tabs and chords for e-ink
+- [Wi-Fi while charging](https://github.com/Akrota/koreader-wifi-while-charging): Keep Wi-Fi on while charging
+- [Zen page browser gesture](https://github.com/Akrota/koreader-zen-page-browser-gesture): Gesture for the ZenOS page browser
+
 ## License
 
 [MIT](LICENSE)
+
+---
+
+## Deutsch (Kurzbeschreibung)
+
+Ein KOReader-Plugin mit einer eigenen Tonwertkurve für Comics, wie in einer Bildbearbeitung. Schwarz bleibt Schwarz, Weiß bleibt Weiß. Dazwischen lässt sich ein Mittelpunkt verschieben, und Schatten und Lichter lassen sich getrennt heller oder dunkler machen, zum Beispiel für eine S-Kurve mit mehr Kontrast.
+
+- Gedacht für Farb- und Graustufenseiten von Comics. Beides wird umgerechnet.
+- Es ändert keine KOReader-Dateien und übersteht daher Updates.
+- Es arbeitet mit [Comic Panel Zoom](https://github.com/Akrota/koreader-comic-panel-zoom) zusammen: Das Plugin lässt den Aufruf zum Zeichnen der Seite in der Form, die Panel Zoom erwartet.
+
+**Stand: Prototyp / Beta.** Es läuft auf einem Kobo Libra Colour, die Einstellungen werden aber noch abgestimmt.
+
+Die ausführliche deutsche Anleitung steht in der [README.de.md](README.de.md).

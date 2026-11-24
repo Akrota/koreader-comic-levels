@@ -2,6 +2,12 @@
 
 *English: [README.md](README.md)*
 
+<!-- byline -->
+Ein Plugin von **Akrota und Claude**.
+
+<!-- lang-note -->
+*Funktioniert auf **Deutsch und Englisch**: Menüs und Texte richten sich nach der KOReader-Sprache.*
+
 Ein KOReader-Plugin mit einer eigenen Tonwertkurve für Comics, wie in einer Bildbearbeitung. Schwarz bleibt Schwarz, Weiß bleibt Weiß. Dazwischen lässt sich ein Mittelpunkt verschieben, und Schatten und Lichter lassen sich getrennt heller oder dunkler machen, zum Beispiel für eine S-Kurve mit mehr Kontrast.
 
 - Gedacht für Farb- und Graustufenseiten von Comics. Beides wird umgerechnet.
@@ -12,7 +18,11 @@ Ein KOReader-Plugin mit einer eigenen Tonwertkurve für Comics, wie in einer Bil
 
 ## Bildschirmfotos
 
-<img src="docs/screenshots/menu.png" width="320" alt="Levels menu"> 
+*Die Bildschirmfotos zeigen die englische Oberfläche; in einem deutschen KOReader sind die Texte deutsch.*
+
+<table>
+<tr><td align="center" valign="top" width="33%"><img src="docs/screenshots/menu.png" width="260" alt="Tonwerte-Menü: Schatten, Mittelpunkt, Lichter, Mitteltöne"><br><sub>Tonwerte-Menü: Schatten, Mittelpunkt, Lichter, Mitteltöne</sub></td><td align="center" valign="top" width="33%"><img src="docs/screenshots/protect-shadows.png" width="260" alt="Schatten schützen: aus, leicht, stark"><br><sub>Schatten schützen: aus, leicht, stark</sub></td><td align="center" valign="top" width="33%"><img src="docs/screenshots/how-it-works.png" width="260" alt="Hilfetext zu Mittelpunkt, Schatten, Lichtern, Mitteltönen"><br><sub>Hilfetext zu Mittelpunkt, Schatten, Lichtern, Mitteltönen</sub></td></tr>
+</table>
 
 ## Funktionen
 
@@ -69,6 +79,19 @@ Kobo Libra Colour mit KOReader 2026.07.1 und ZenOS.
 Den Code hat vollständig **Claude** geschrieben, eine KI von Anthropic (in Claude Code). Der Inhaber dieses Projekts hatte die Idee, hat das Plugin auf einem Kobo getestet und Rückmeldungen gegeben, aber keinen Code geschrieben.
 
 Keine Gewährleistung und kein garantierter Support. Fehlermeldungen gern als [Issue](../../issues). Bitte `crash.log` aus dem KOReader-Ordner anhängen.
+
+## Weitere Plugins von Akrota und Claude
+
+- [Comic Display](https://github.com/Akrota/koreader-comic-display): Refresh gegen Ghosting, dunkle Ränder und Uhr für Comics
+- [Comic Panel Zoom](https://github.com/Akrota/koreader-comic-panel-zoom): Panel-für-Panel-Ansicht (Fork von JorgeTheFox)
+- [Comic Dual Page](https://github.com/Akrota/koreader-comic-dual-page): Doppelseiten mit Erkennung (Fork von KORComic)
+- [CBZ Converter](https://github.com/Akrota/koreader-cbz-converter): Comics, PDF und EPUB auf dem Gerät in CBZ umwandeln
+- [Folder to series](https://github.com/Akrota/koreader-folder-to-series): Comic-Ordner zu Reihen mit Bandnummern
+- [Drive Library](https://github.com/Akrota/koreader-drive-library): Google Drive als Cloud-Bibliothek
+- [Story Recall](https://github.com/Akrota/koreader-story-recall): Spoilerfreier KI-Rückblick auf Bücher
+- [Guitar Tab Reader](https://github.com/Akrota/koreader-guitar-tab-reader): Gitarren-Tabs und Chords für E-Ink
+- [Wi-Fi while charging](https://github.com/Akrota/koreader-wifi-while-charging): WLAN anlassen, solange das Gerät lädt
+- [Zen page browser gesture](https://github.com/Akrota/koreader-zen-page-browser-gesture): Geste für den ZenOS-Seitenbrowser
 
 ## Lizenz
 
