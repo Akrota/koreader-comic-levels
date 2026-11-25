@@ -2,9 +2,6 @@
 
 *English: [README.md](README.md)*
 
-<!-- byline -->
-Ein Plugin von **Akrota und Claude**.
-
 <!-- lang-note -->
 *Funktioniert auf **Deutsch und Englisch**: Menüs und Texte richten sich nach der KOReader-Sprache.*
 
@@ -24,15 +21,20 @@ Ein KOReader-Plugin mit einer eigenen Tonwertkurve für Comics, wie in einer Bil
 <tr><td align="center" valign="top" width="33%"><img src="docs/screenshots/menu.png" width="260" alt="Tonwerte-Menü: Schatten, Mittelpunkt, Lichter, Mitteltöne"><br><sub>Tonwerte-Menü: Schatten, Mittelpunkt, Lichter, Mitteltöne</sub></td><td align="center" valign="top" width="33%"><img src="docs/screenshots/protect-shadows.png" width="260" alt="Schatten schützen: aus, leicht, stark"><br><sub>Schatten schützen: aus, leicht, stark</sub></td><td align="center" valign="top" width="33%"><img src="docs/screenshots/how-it-works.png" width="260" alt="Hilfetext zu Mittelpunkt, Schatten, Lichtern, Mitteltönen"><br><sub>Hilfetext zu Mittelpunkt, Schatten, Lichtern, Mitteltönen</sub></td></tr>
 </table>
 
+## Sofort einsatzbereit
+
+Das Plugin kommt mit Werten, die auf einem Kobo Libra Colour erprobt sind und dem Besitzer gefallen: **Mittelpunkt 160, Schatten -45, Lichter +10, Mitteltöne 0,9, Schatten schützen leicht**. Sie wirken gleich nach der Installation. Bildschirme unterscheiden sich, also nach Geschmack anpassen, oder „Alles auf neutral“ wählen, dann wirkt nichts.
+
 ## Funktionen
 
-- **Mittelpunkt** (30 bis 225, Standard 128): trennt Schatten und Lichter. Der Mittelpunkt selbst behält seine Helligkeit.
+- **Mittelpunkt** (30 bis 225, Standard 160): trennt Schatten und Lichter. Der Mittelpunkt selbst behält seine Helligkeit.
 - **Schatten** (-100 bis +100): hebt die Töne zwischen Schwarz und Mittelpunkt an (über 0) oder senkt sie ab (unter 0).
 - **Lichter** (-100 bis +100): hebt die Töne zwischen Mittelpunkt und Weiß an oder senkt sie ab.
 - **S-Kurve vorschlagen (mehr Kontrast):** ein Tipp stellt Schatten -30, Lichter +30 und Mittelpunkt 128 ein.
-- **Mitteltöne** (0,5 bis 1,6, Standard 1,0): hebt oder senkt alles dazwischen gleichmäßig (unter 1,0 dunkler).
+- **Mitteltöne** (0,5 bis 1,6, Standard 0,9): hebt oder senkt alles dazwischen gleichmäßig (unter 1,0 dunkler).
 - **Schatten schützen** (aus / leicht / stark): die dunkelsten Töne laufen nicht zu.
 - **An/Aus-Schalter** und eine **Geste** „Tonwerte an/aus“ zum schnellen Vergleichen.
+- **Empfohlene Werte (Standard):** zurück zu den Werten, mit denen das Plugin ausgeliefert wird.
 - **Alles auf neutral.**
 - Die Einstellungen gelten für alle Comics gleich (nicht pro Comic), damit die Seiten nicht unterschiedlich aussehen.
 
@@ -80,7 +82,7 @@ Den Code hat vollständig **Claude** geschrieben, eine KI von Anthropic (in Clau
 
 Keine Gewährleistung und kein garantierter Support. Fehlermeldungen gern als [Issue](../../issues). Bitte `crash.log` aus dem KOReader-Ordner anhängen.
 
-## Weitere Plugins von Akrota und Claude
+## Weitere Plugins
 
 - [Comic Display](https://github.com/Akrota/koreader-comic-display): Refresh gegen Ghosting, dunkle Ränder und Uhr für Comics
 - [Comic Panel Zoom](https://github.com/Akrota/koreader-comic-panel-zoom): Panel-für-Panel-Ansicht (Fork von JorgeTheFox)

@@ -1,5 +1,9 @@
 # Tonwerte – Änderungen
 
+## 0.3.0 (25.11.2026)
+
+- **Neue Standardwerte:** Mittelpunkt 160, Schatten -45, Lichter +10, Mitteltöne 0,9, Schatten schützen leicht (auf einem Kobo Libra Colour erprobt). Neuer Menüpunkt „Empfohlene Werte (Standard)“. „Alles auf neutral“ bleibt. Wer schon eigene Werte gespeichert hat, behält sie.
+
 ## 0.2.0 (Prototyp mit Kurve)
 
 - **Kurve statt Schwarz-/Weißpunkt:** Schwarz bleibt Schwarz, Weiß bleibt Weiß. Der **Mittelpunkt** (30 bis 225, Standard 128) ist verschiebbar und behält seine Helligkeit. **Schatten** (-100 bis +100) biegen den Abschnitt Schwarz bis Mittelpunkt, **Lichter** (-100 bis +100) den Abschnitt Mittelpunkt bis Weiß. Die Kurve bleibt dabei immer steigend.

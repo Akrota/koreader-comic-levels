@@ -2,9 +2,6 @@
 
 *Deutsch: [README.de.md](README.de.md)*
 
-<!-- byline -->
-A plugin by **Akrota and Claude**.
-
 <!-- lang-note -->
 *Works in **English and German**: menus and texts follow KOReader's language. A German description is at the bottom of this page.*
 
@@ -24,15 +21,20 @@ A KOReader plugin with your own tone curve for comics, like in an image editor. 
 <tr><td align="center" valign="top" width="33%"><img src="docs/screenshots/menu.png" width="260" alt="Levels menu: shadows, midpoint, lights, mid-tones"><br><sub>Levels menu: shadows, midpoint, lights, mid-tones</sub></td><td align="center" valign="top" width="33%"><img src="docs/screenshots/protect-shadows.png" width="260" alt="Protect shadows: off, light, strong"><br><sub>Protect shadows: off, light, strong</sub></td><td align="center" valign="top" width="33%"><img src="docs/screenshots/how-it-works.png" width="260" alt="Help text for midpoint, shadows, lights, mid-tones"><br><sub>Help text for midpoint, shadows, lights, mid-tones</sub></td></tr>
 </table>
 
+## Ready to use
+
+The plugin ships with settings that the owner tried on a Kobo Libra Colour and likes: **midpoint 160, shadows -45, lights +10, mid-tones 0.9, protect shadows light**. They apply as soon as the plugin is installed. Screens differ, so adjust them to taste, or choose "Reset all to neutral" for no effect.
+
 ## Features
 
-- **Midpoint** (30 to 225, default 128): splits shadows and lights. The midpoint itself keeps its brightness.
+- **Midpoint** (30 to 225, default 160): splits shadows and lights. The midpoint itself keeps its brightness.
 - **Shadows** (-100 to +100): lightens (above 0) or darkens (below 0) the tones between black and the midpoint.
 - **Lights** (-100 to +100): lightens or darkens the tones between the midpoint and white.
 - **Suggest an S-curve (more contrast):** one tap sets shadows -30, lights +30, midpoint 128.
-- **Mid-tones** (0.5 to 1.6, default 1.0): lightens or darkens everything in between evenly (below 1.0 darker).
+- **Mid-tones** (0.5 to 1.6, default 0.9): lightens or darkens everything in between evenly (below 1.0 darker).
 - **Protect shadows** (off / light / strong): the darkest tones don't block up.
 - **On/off switch** and a **gesture** "Levels on/off" for a quick before/after comparison.
+- **Recommended values (default):** back to the values the plugin ships with.
 - **Reset all to neutral.**
 - The settings apply to all comics alike (not per comic), so pages don't look different from each other.
 
@@ -80,7 +82,7 @@ The code was written entirely by **Claude**, an AI by Anthropic (in Claude Code)
 
 There is no warranty and no guaranteed support. Bug reports are welcome as [issues](../../issues). Please attach `crash.log` from the KOReader folder.
 
-## More plugins by Akrota and Claude
+## More plugins
 
 - [Comic Display](https://github.com/Akrota/koreader-comic-display): Refresh against ghosting, dark borders and a clock for comics
 - [Comic Panel Zoom](https://github.com/Akrota/koreader-comic-panel-zoom): Panel-by-panel view (fork of JorgeTheFox's plugin)

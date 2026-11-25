@@ -47,6 +47,7 @@ local strings = {
         shadow_light = "leicht",
         shadow_strong = "stark",
         reset = "Alles auf neutral",
+        recommended = "Empfohlene Werte (Standard)",
         about = "Wie funktioniert das?",
         about_text = "Eine eigene Tonwertkurve für Comics, wie in einer Bildbearbeitung. Schwarz bleibt Schwarz, Weiß bleibt Weiß.\n\n"
             .. "• Mittelpunkt: trennt Schatten und Lichter, von dunkel (links) nach hell (rechts) verschiebbar.\n"
@@ -55,6 +56,7 @@ local strings = {
             .. "Mehr Kontrast (S-Kurve): Schatten etwas dunkler, Lichter etwas heller.\n\n"
             .. "• Mitteltöne: hebt oder senkt alles dazwischen gleichmäßig (unter 1,0 dunkler).\n"
             .. "• Schatten schützen: die dunkelsten Töne laufen nicht zu (leicht: wie im Original, stark: etwas heller).\n\n"
+            .. "Ab Werk eingestellt: Mittelpunkt 160, Schatten -45, Lichter +10, Mitteltöne 0,9, Schatten schützen leicht (erprobt auf einem Kobo Libra Colour). Zurück dahin: „Empfohlene Werte“, ganz ohne Wirkung: „Alles auf neutral“.\n\n"
             .. "Gilt für alle Comics. Jede Seite wird nur einmal umgerechnet. KOReaders eigene Regler wirken vorher, am besten Kontrast auf 1,0.",
     },
     en = {
@@ -82,6 +84,7 @@ local strings = {
         shadow_light = "light",
         shadow_strong = "strong",
         reset = "Reset all to neutral",
+        recommended = "Recommended values (default)",
         about = "How does it work?",
         about_text = "Your own tone curve for comics, like in an image editor. Black stays black, white stays white.\n\n"
             .. "• Midpoint: splits shadows and lights, movable from dark (left) to bright (right).\n"
@@ -90,6 +93,7 @@ local strings = {
             .. "More contrast (S-curve): shadows a little darker, lights a little lighter.\n\n"
             .. "• Mid-tones: raises or lowers everything in between evenly (below 1.0 darker).\n"
             .. "• Protect shadows: the darkest tones don't block up (light: as in the original, strong: a little lighter).\n\n"
+            .. "Set out of the box: midpoint 160, shadows -45, lights +10, mid-tones 0.9, protect shadows light (tried on a Kobo Libra Colour). To get back there: \"Recommended values\"; no effect at all: \"Reset all to neutral\".\n\n"
             .. "Applies to all comics. Each page is converted only once. KOReader's own sliders apply first, best set contrast to 1.0.",
     },
 }
@@ -118,16 +122,18 @@ end
 local KEY = "tonwerte"
 -- pivot 0-255, shadows/lights -100..+100, gamma 0,5-1,6, shadow 0/0,5/1
 local NEUTRAL = { pivot = 128, shadows = 0, lights = 0, gamma = 1.0, shadow = 0 }
+-- Ab Werk: die Werte, die sich auf einem Kobo Libra Colour bewaehrt haben (25.11.2026)
+local DEFAULTS = { pivot = 160, shadows = -45, lights = 10, gamma = 0.9, shadow = 0.5 }
 
 local function cfg()
     local c = G_reader_settings:readSetting(KEY) or {}
     return {
         on = c.off ~= true,
-        pivot = tonumber(c.pivot) or NEUTRAL.pivot,
-        shadows = tonumber(c.shadows) or NEUTRAL.shadows,
-        lights = tonumber(c.lights) or NEUTRAL.lights,
-        gamma = tonumber(c.gamma) or NEUTRAL.gamma,
-        shadow = tonumber(c.shadow) or NEUTRAL.shadow,
+        pivot = tonumber(c.pivot) or DEFAULTS.pivot,
+        shadows = tonumber(c.shadows) or DEFAULTS.shadows,
+        lights = tonumber(c.lights) or DEFAULTS.lights,
+        gamma = tonumber(c.gamma) or DEFAULTS.gamma,
+        shadow = tonumber(c.shadow) or DEFAULTS.shadow,
     }
 end
 
@@ -290,7 +296,7 @@ function Tonwerte:addToMainMenu(menu_items)
             UIManager:show(SpinWidget:new{
                 title_text = title,
                 value = cfg()[key],
-                default_value = NEUTRAL[key],
+                default_value = DEFAULTS[key],
                 value_min = min, value_max = max,
                 value_step = step, value_hold_step = step * 5,
                 precision = precision,
@@ -367,6 +373,15 @@ function Tonwerte:addToMainMenu(menu_items)
                     return T("shadow", v >= 0.99 and T("shadow_strong") or v > 0 and T("shadow_light") or T("shadow_off"))
                 end,
                 sub_item_table = shadow_items,
+            },
+            {
+                text = T("recommended"),
+                keep_menu_open = true,
+                callback = function(touchmenu_instance)
+                    for k, v in pairs(DEFAULTS) do save(k, v) end
+                    self:refresh()
+                    if touchmenu_instance then touchmenu_instance:updateItems() end
+                end,
             },
             {
                 text = T("reset"),

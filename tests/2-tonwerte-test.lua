@@ -44,8 +44,12 @@ UIManager:scheduleIn(5, function()
     -- Seite korrigiert, nur wenn aktiv
     local function tile() return doc:renderPage(1, nil, 1.0, 0, 1.0, 1.0) end
     DocCache:clear()
+    check("ab Werk: empfohlene Werte wirken", tile().tonwerte_done == true
+      and doc:getFullPageHash(1, 1.0, 0, 1.0, 1.0):find("|tw160/-45/10/0.90/0.5", 1, true) ~= nil)
+    G_reader_settings:saveSetting("tonwerte", { pivot = 128, shadows = 0, lights = 0, gamma = 1.0, shadow = 0 })
+    DocCache:clear()
     check("neutral: Seite unveraendert", tile().tonwerte_done == nil)
-    G_reader_settings:saveSetting("tonwerte", { shadows = -30, lights = 30 })
+    G_reader_settings:saveSetting("tonwerte", { pivot = 128, shadows = -30, lights = 30, gamma = 1.0, shadow = 0 })
     DocCache:clear()
     local a = tile()
     check("aktiv: Seite korrigiert, nicht auf Platte", a.tonwerte_done == true and a.persistent == false)
@@ -64,6 +68,12 @@ UIManager:scheduleIn(5, function()
     check("Menue: Schalter oben, Schatten/Mittelpunkt/Lichter, Anleitung zuletzt",
       sub[1].text == "Tonwerte an" and sub[2].text_func() == "Schatten: -30" and sub[3].text_func() == "Mittelpunkt: 128"
       and sub[4].text_func() == "Lichter: +30" and sub[#sub].text == "Wie funktioniert das?")
+    local rec
+    for _, it in ipairs(sub) do if it.text == "Empfohlene Werte (Standard)" then rec = it end end
+    if rec then rec.callback() end
+    local r = G_reader_settings:readSetting("tonwerte")
+    check("Empfohlene Werte setzt 160/-45/+10/0,9/leicht", rec ~= nil and r.pivot == 160 and r.shadows == -45
+      and r.lights == 10 and math.abs(r.gamma - 0.9) < 0.001 and r.shadow == 0.5)
     sub[5].callback()
     local c = G_reader_settings:readSetting("tonwerte")
     check("S-Kurve vorschlagen setzt -30/+30/128", c.shadows == -30 and c.lights == 30 and c.pivot == 128)
